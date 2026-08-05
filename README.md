@@ -9,8 +9,8 @@ SimpleBrowser is a simple and small multi-tab desktop browser for Windows 11, ba
 
 * Multi-tab, either horizontal or vertical tabs
 * Dark mode support
-* (Limited) extension support - extensions can be installed both from the Edge and the Chrome extension store, or from a local folder or .crx file.
-* Python addons - browser can be extended with small Pythons scripts.
+* (Limited) extension support - extensions can be installed both from the [Edge](https://microsoftedge.microsoft.com/addons/microsoft-edge-extensions) and the [Chrome](https://chromewebstore.google.com/category/extensions) extension store, or from a local folder or .crx file. For demonstration purposes the browser comes with 5 extensions preinstalled, but of course you are free to uninstall them (menu "Tools" --> "Extensions").
+* Python addons - the browser can be extended with small Pythons scripts.
 * Bookmark import from common browsers
 * Can use a local/private Runtime version (download a "FixedVersionRuntime" .cab, unpack it e.g. with 7-Zip, rename the unpacked directory "runtime" and put it into the "data" directory next to SimpleBrowser.exe). 
 
