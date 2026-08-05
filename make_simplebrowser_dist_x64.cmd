@@ -12,7 +12,7 @@ set APP_DIR=%CD%\dist\%APP_NAME%\
 
 REM Cleanup dist folder
 rd /s /q "dist\%APP_NAME%" 2>nul
-del "dist\%APP_NAME%-x64.7z" 2>nul
+del "dist\%APP_NAME%-x64-portable.7z" 2>nul
 del "dist\%APP_NAME%-x64-setup.exe" 2>nul
 
 echo.
@@ -76,7 +76,7 @@ echo Creating .7z archives...
 echo ****************************************
 cd dist
 set PATH=C:\Program Files\7-Zip;%PATH%
-7z a "%APP_NAME%-x64.7z" "%APP_NAME%\*"
+7z a "%APP_NAME%-x64-portable.7z" "%APP_NAME%\*"
 cd ..
 exit /B
 
