@@ -1,0 +1,293 @@
+{
+    "appName": {
+        "message" : "Помощник прокси"
+    },
+    "appDesc": {
+        "message" : "Управление прокси в браузере Google Chrome"
+    },
+    "title" : {
+        "message" : "Помощник прокси"
+    },
+    "proxy_helper_options" : {
+        "message" : "Настройки «Помощника прокси»"
+    },
+    "configure": {
+        "message" : "Настройка"
+    },
+    "info": {
+        "message" : "Информация"
+    },
+    "proxy_information" : {
+        "message" : "Настройки прокси"
+    },
+    "config_auto": {
+        "message" : "Автоматическая настройка"
+    },
+    "config_manual": {
+        "message" : "Ручная настройка"
+    },
+    "show_adv" : {
+        "message" : "Показывать дополнительные настройки"
+    },
+    "advanced_settings" : {
+        "message" : "Дополнительные настройки"
+    },
+    "download" : {
+        "message" : "Загрузить"
+    },
+    "pac_url": {
+        "message" : "Адрес PAC"
+    },
+    "online_pac_script" : {
+        "message" : "Использовать PAC-скрипт из сети"
+    },
+    "save" : {
+        "message" : "Сохранить"
+    },
+    "edit" : {
+        "message" : "Изменить"
+    },
+    "cancel" : {
+        "message" : "Отмена"
+    },
+    "proxy": {
+        "message" : "Прокси"
+    },
+    "pac_script" : {
+        "message" : "PAC-скрипт"
+    },
+    "http_proxy" : {
+        "message" : "HTTP-прокси:"
+    },
+    "https_proxy" : {
+        "message" : "HTTPS-прокси:"
+    },
+    "quic_proxy" : {
+        "message" : "QUIC-прокси:"
+    },
+    "socks_proxy" : {
+        "message" : "SOCKS-прокси:"
+    },
+    "system_proxy" : {
+        "message" : "Системный"
+    },
+    "direct_proxy" : {
+        "message" : "Без прокси"
+    },
+    "config_proxy" : {
+        "message" : "Настройка прокси"
+    },
+    "more_modes": {
+        "message": "Ещё"
+    },
+    "port" : {
+        "message" : "Порт:"
+    },
+    "pac_path" : {
+        "message" : "PAC-файл:"
+    },
+    "edit_pac_data" : {
+        "message" : "Редактировать PAC-скрипт"
+    },
+    "bypass_list" : {
+        "message" : "Белый список"
+    },
+    "proxy_rules" : {
+        "message" : "Режим прокси:"
+    },
+    "return" : {
+        "message" : "Назад"
+    },
+    "use_predefine_list" : {
+        "message" : "Использовать встроенный белый список"
+    },
+    "config_bypasslist" : {
+        "message" : "Белый список прокси"
+    },
+    "domain_in_bypasslist" : {
+        "message" : "Имена в белом списке не будут использовать прокси"
+    },
+    "china_list" : {
+        "message" : "Список сайтов Китая"
+    },
+    "user" : {
+        "message" : "Пользователь:"
+    },
+    "pass" : {
+        "message" : "Пароль:"
+    },
+    "authentication" : {
+        "message" : "Настройки аутентификации"
+    },
+    "authConfig" : {
+        "message" : "Аутентификация"
+    },
+    "pac_configuration" : {
+        "message" : "Настройка PAC"
+    },
+    "pac_data" : {
+        "message" : "PAC-скрипт"
+    },
+    "password_authentication": {
+        "message" : "Использовать пароль"
+    },
+    "pac_data_set" : {
+        "message" : "PAC-скрипт"
+    },
+    "pac_url_set" : {
+        "message" : "URL PAC-файла"
+    },
+    "socks_proxy_set" : {
+        "message" : "SOCKS-прокси"
+    },
+    "http_proxy_set" : {
+        "message" : "HTTP-прокси"
+    },
+    "https_proxy_set" : {
+        "message" : "HTTPS-прокси"
+    },
+    "quic_proxy_set" : {
+        "message" : "QUIC-прокси"
+    },
+    "auto_detect_set" : {
+        "message" : "Автоматически"
+    },
+    "General": {
+        "message" : "Основные"
+    },
+    "Rules" : {
+        "message" : "Правила"
+    },
+    "Help" : {
+        "message" : "Помощь"
+    },
+    "About" : {
+        "message" : "Информация"
+    },
+    "Options" : {
+        "message" : "Настройки"
+    },
+    "proxy_servers" : {
+        "message" : "Прокси"
+    },
+    "config_proxylist": {
+        "message": "Чёрный список для прокси"
+    },
+    "domain_in_proxy": {
+        "message": "Домены в чёрном списке будут использовать прокси"
+    },
+    "rules_mode": {
+        "message": "Режим правил:"
+    },
+    "Whitelist": {
+        "message": "Белый список"
+    },
+    "Blacklist": {
+        "message": "Чёрный список"
+    },
+    "chrome_web_store": {
+        "message": "Интернет-магазин Chrome"
+    },
+    "open_source_licenses": {
+        "message": "Лицензии открытого ПО"
+    },
+    "profile_default_name": {
+        "message": "Default"
+    },
+    "profiles_label": {
+        "message": "Profile:"
+    },
+    "new_profile": {
+        "message": "Создать"
+    },
+    "rename_profile": {
+        "message": "Переименовать"
+    },
+    "duplicate_profile": {
+        "message": "Дублировать"
+    },
+    "delete_profile": {
+        "message": "Удалить"
+    },
+    "set_active": {
+        "message": "Активировать"
+    },
+    "delete_profile_confirm": {
+        "message": "Удалить этот профиль? Это действие нельзя отменить."
+    },
+    "cannot_delete_active_profile": {
+        "message": "Нельзя удалить активный профиль. Сначала переключитесь на другой профиль во всплывающем окне."
+    },
+    "profile_name_prompt": {
+        "message": "Имя профиля:"
+    },
+    "profile_active_indicator": {
+        "message": "(активный)"
+    },
+    "cycle_profile_command": {
+        "message": "Переключиться на следующий прокси-профиль"
+    },
+    "active_mode": {
+        "message": "Активный режим"
+    },
+    "usage": {
+        "message": "Использование"
+    },
+    "changelog": {
+        "message": "История изменений"
+    },
+    "usage_overview_title": {
+        "message": "Обзор"
+    },
+    "usage_overview_body": {
+        "message": "Помощник прокси переключает прокси Chrome независимо от системного прокси. Каждый профиль хранит полную конфигурацию прокси; выберите профиль и тип прокси во всплывающем окне, чтобы применить."
+    },
+    "usage_profiles_title": {
+        "message": "Профили"
+    },
+    "usage_profiles_body": {
+        "message": "Создайте по одному профилю для каждого окружения (работа, дом, поездки). Используйте панель в верхней части этой страницы: + New — создать, Rename / Duplicate / Delete — управлять. Переключайте активный профиль во всплывающем окне."
+    },
+    "usage_modes_title": {
+        "message": "Типы прокси"
+    },
+    "usage_modes_body": {
+        "message": "Каждый профиль запоминает используемый тип прокси. Во всплывающем окне показаны Direct и все записи HTTP / HTTPS / SOCKS / PAC, заполненные на других вкладках; System и Auto Detect (WPAD) скрыты за строкой «Ещё»."
+    },
+    "usage_servers_title": {
+        "message": "Настройка серверов"
+    },
+    "usage_servers_body": {
+        "message": "Введите хост и порт прокси для HTTP, HTTPS или SOCKS на вкладке General. Для SOCKS выберите версию протокола (SOCKS4 или SOCKS5). Proxy Mode определяет, как Chrome распределяет запросы между прокси (singleProxy использует один прокси для всего трафика)."
+    },
+    "usage_pac_title": {
+        "message": "PAC (автонастройка прокси)"
+    },
+    "usage_pac_body": {
+        "message": "PAC-скрипты определяют прокси для каждого URL. Вставьте скрипт в поле PAC Script или укажите адрес размещённого скрипта в PAC URL."
+    },
+    "usage_rules_title": {
+        "message": "Правила: белый и чёрный списки"
+    },
+    "usage_rules_body": {
+        "message": "Правила работают вместе с обычными режимами HTTP / HTTPS / SOCKS и игнорируются в режимах PAC URL / PAC Script (у них своя логика маршрутизации). Белый список (по умолчанию): прокси используется для всех запросов, кроме совпавших с bypass-списком. Чёрный список: прокси используется только для запросов из proxy-списка, остальное идёт напрямую — реализовано через сгенерированный PAC-скрипт. Оба списка разделяются запятыми и принимают: голый хост (example.com покрывает поддомены), маски (*.foo.com), CIDR (192.168.0.0/16), <local>. China List работает только в режиме белого списка."
+    },
+    "usage_auth_title": {
+        "message": "Аутентификация"
+    },
+    "usage_auth_body": {
+        "message": "Имя пользователя и пароль для прокси, требующих базовой аутентификации. Примечание: API Chrome поддерживает аутентификацию только для HTTP/HTTPS-прокси, но не для SOCKS."
+    },
+    "usage_shortcuts_title": {
+        "message": "Горячие клавиши"
+    },
+    "usage_shortcuts_body": {
+        "message": "Alt+P переключает на следующий профиль. Alt+O открывает эту страницу настроек. Настроить сочетания клавиш можно по адресу chrome://extensions/shortcuts."
+    },
+    "usage_switching_title": {
+        "message": "Переключение профилей"
+    },
+    "usage_switching_body": {
+        "message": "Нажмите значок на панели инструментов, чтобы открыть всплывающее окно. Нажмите на профиль, чтобы развернуть его, затем нажмите на тип прокси — этот профиль станет активным, и прокси сразу применится к Chrome."
+    }
+}

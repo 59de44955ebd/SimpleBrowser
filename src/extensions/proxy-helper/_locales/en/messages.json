@@ -1,0 +1,239 @@
+{
+    "appName": {
+        "message": "Proxy Helper"
+    },
+    "appDesc": {
+        "message": "Set proxy for Google Chrome browser"
+    },
+    "title": {
+        "message": "Proxy Helper"
+    },
+    "proxy_helper_options": {
+        "message": "Proxy Helper Options"
+    },
+    "configure": {
+        "message": "Configure"
+    },
+    "info": {
+        "message": "Info"
+    },
+    "General": {
+        "message": "General"
+    },
+    "Rules": {
+        "message": "Rules"
+    },
+    "About": {
+        "message": "About"
+    },
+    "authConfig": {
+        "message": "Authentication"
+    },
+    "proxy_servers": {
+        "message": "Proxy Servers"
+    },
+    "http_proxy": {
+        "message": "HTTP Proxy:"
+    },
+    "https_proxy": {
+        "message": "HTTPS Proxy:"
+    },
+    "socks_proxy": {
+        "message": "SOCKS Proxy:"
+    },
+    "quic_proxy": {
+        "message": "QUIC Proxy:"
+    },
+    "port": {
+        "message": "Port:"
+    },
+    "advanced_settings": {
+        "message": "Advanced Settings"
+    },
+    "proxy_rules": {
+        "message": "Proxy Mode:"
+    },
+    "pac_configuration": {
+        "message": "PAC Configuration"
+    },
+    "pac_data": {
+        "message": "PAC Script"
+    },
+    "config_bypasslist": {
+        "message": "Bypass List"
+    },
+    "domain_in_bypasslist": {
+        "message": "Domains in the bypass list will never use a proxy."
+    },
+    "config_proxylist": {
+        "message": "Proxy List"
+    },
+    "domain_in_proxy": {
+        "message": "Only domains in this list will go through the proxy."
+    },
+    "rules_mode": {
+        "message": "Rules Mode:"
+    },
+    "Whitelist": {
+        "message": "Whitelist"
+    },
+    "Blacklist": {
+        "message": "Blacklist"
+    },
+    "use_predefine_list": {
+        "message": "Use built-in bypass list"
+    },
+    "china_list": {
+        "message": "China List"
+    },
+    "user": {
+        "message": "Username:"
+    },
+    "pass": {
+        "message": "Password:"
+    },
+    "authentication": {
+        "message": "Authentication"
+    },
+    "pac_data_set": {
+        "message": "PAC Script"
+    },
+    "pac_url_set": {
+        "message": "PAC URL"
+    },
+    "socks_proxy_set": {
+        "message": "SOCKS Proxy"
+    },
+    "http_proxy_set": {
+        "message": "HTTP Proxy"
+    },
+    "https_proxy_set": {
+        "message": "HTTPS Proxy"
+    },
+    "quic_proxy_set": {
+        "message": "QUIC Proxy"
+    },
+    "auto_detect_set": {
+        "message": "Auto Detect"
+    },
+    "system_proxy": {
+        "message": "System"
+    },
+    "direct_proxy": {
+        "message": "Direct"
+    },
+    "config_proxy": {
+        "message": "Settings"
+    },
+    "more_modes": {
+        "message": "More"
+    },
+    "chrome_web_store": {
+        "message": "Chrome Web Store"
+    },
+    "open_source_licenses": {
+        "message": "Open Source Licenses"
+    },
+    "profile_default_name": {
+        "message": "Default"
+    },
+    "profiles_label": {
+        "message": "Profile:"
+    },
+    "new_profile": {
+        "message": "New"
+    },
+    "rename_profile": {
+        "message": "Rename"
+    },
+    "duplicate_profile": {
+        "message": "Duplicate"
+    },
+    "delete_profile": {
+        "message": "Delete"
+    },
+    "set_active": {
+        "message": "Set Active"
+    },
+    "delete_profile_confirm": {
+        "message": "Delete this profile? This cannot be undone."
+    },
+    "cannot_delete_active_profile": {
+        "message": "Cannot delete the active profile. Switch to another profile first."
+    },
+    "profile_name_prompt": {
+        "message": "Profile name:"
+    },
+    "profile_active_indicator": {
+        "message": "(active)"
+    },
+    "cycle_profile_command": {
+        "message": "Cycle to next proxy profile"
+    },
+    "active_mode": {
+        "message": "Active Mode"
+    },
+    "Help": {
+        "message": "Help"
+    },
+    "usage": {
+        "message": "Usage"
+    },
+    "changelog": {
+        "message": "Changelog"
+    },
+    "usage_overview_title": {
+        "message": "Overview"
+    },
+    "usage_overview_body": {
+        "message": "Proxy Helper switches Chrome's proxy independently of the system proxy. Each profile holds a complete proxy configuration; pick a profile and a proxy type from the popup to apply it."
+    },
+    "usage_profiles_title": {
+        "message": "Profiles"
+    },
+    "usage_profiles_body": {
+        "message": "Create one profile per environment (Work, Home, Travel). Use the bar at the top of this page: + New to create, Rename / Duplicate / Delete to manage. Switch the active profile from the popup."
+    },
+    "usage_modes_title": {
+        "message": "Proxy Types"
+    },
+    "usage_modes_body": {
+        "message": "Each profile remembers which proxy type it's using. The popup lists Direct plus every HTTP / HTTPS / SOCKS / PAC entry you've filled in under the other tabs; System and Auto Detect (WPAD) sit behind a \"More\" row."
+    },
+    "usage_servers_title": {
+        "message": "Server Configuration"
+    },
+    "usage_servers_body": {
+        "message": "Enter proxy host and port for HTTP, HTTPS, or SOCKS in the General tab. For SOCKS, pick the protocol version (SOCKS4 or SOCKS5). Proxy Mode controls how Chrome routes requests across proxies (singleProxy uses one proxy for all traffic)."
+    },
+    "usage_pac_title": {
+        "message": "PAC (Proxy Auto-Config)"
+    },
+    "usage_pac_body": {
+        "message": "PAC scripts decide the proxy per URL. Paste a script inline under PAC Script, or point to a hosted script under PAC URL."
+    },
+    "usage_rules_title": {
+        "message": "Rules: Whitelist & Blacklist"
+    },
+    "usage_rules_body": {
+        "message": "Rules pair with the regular HTTP / HTTPS / SOCKS proxy modes and are ignored by PAC URL / PAC Script (those modes bring their own routing logic). Whitelist (default): every request uses the proxy except those matching the bypass list. Blacklist: only requests matching the proxy list use the proxy, everything else goes direct — implemented as a generated PAC script. Both lists are comma-separated and accept bare hosts (example.com also covers subdomains), wildcards (*.foo.com), CIDR (192.168.0.0/16), and <local>. China List applies to Whitelist mode only."
+    },
+    "usage_auth_title": {
+        "message": "Authentication"
+    },
+    "usage_auth_body": {
+        "message": "Username and password for proxies that require basic authentication. Note: Chrome's API supports authentication for HTTP/HTTPS proxies only, not SOCKS."
+    },
+    "usage_shortcuts_title": {
+        "message": "Keyboard Shortcuts"
+    },
+    "usage_shortcuts_body": {
+        "message": "Alt+P cycles to the next profile. Alt+O opens this options page. Customize the shortcuts at chrome://extensions/shortcuts."
+    },
+    "usage_switching_title": {
+        "message": "Switching Profiles"
+    },
+    "usage_switching_body": {
+        "message": "Click the toolbar icon to open the popup. Click a profile to expand it, then click a proxy type — that profile becomes active and the proxy is applied to Chrome immediately."
+    }
+}

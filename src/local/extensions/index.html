@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+<meta name="color-scheme" content="light dark">
+<title>Extensions</title>
+<link rel="icon" href="favicon-light.ico" media="(prefers-color-scheme: light)" sizes="16x16" />
+<link rel="icon" href="favicon-dark.ico" media="(prefers-color-scheme: dark)" sizes="16x16" />
+<link rel="stylesheet" href="/index.css">
+<style>
+td {white-space: nowrap;}
+</style>
+</head>
+<body>
+<div id="main" style="display:none;">
+	<h1>Extensions</h1>
+	<table width="100%">
+		<thead>
+			<tr align="left"><th>Name</th><th>ID</th><th>Enabled</th><th></th><th></th></tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+	<br>
+	<a href="#" onclick="chrome.webview.api.show_extension_details();return false;">Technical Details</a><br><br>
+	<!--
+	<a href="https://microsoftedge.microsoft.com/addons/microsoft-edge-extensions" target="_blank">Go to Microsoft Edge Extension Store</a><br><br>
+	<a href="https://chromewebstore.google.com/category/extensions" target="_blank">Go to Google Chrome Extension Store</a><br><br><br>
+	-->
+	<br><br>
+	Extensions can be installed in 3 different ways:
+	<ul>
+		<li>by installing them from the <a href="https://microsoftedge.microsoft.com/addons/microsoft-edge-extensions" target="_blank">Microsoft Edge extension store</a> or the <a href="https://chromewebstore.google.com/category/extensions" target="_blank">Google Chrome extension store</a></li>
+		<li>by dropping a .crx file into this window</li>
+		<li>by dropping the manifest.json from an unpacked extension folder into this window</li>
+	</ul>
+	<br>
+	<p><b>Note that only some extensions make sense and will work since this browser does not provide the standard Chrome UI.</b></p>
+</div>
+<script>
+function show_extensions(extensions){
+	let html = '';
+	for (let row of extensions){
+		//const [name, id, is_enabled, files_html, preinstalled] = [...row];
+		const [name, id, is_enabled, files_html] = [...row];
+		if (files_html)
+			html += `<tr><td class="no-indent"><details><summary>${name}</summary>${files_html}</details></td><td>${id}</td><td>${is_enabled ? "Yes" : "No"}</td>`;
+		else
+			html += `<tr><td>${name}</td><td>${id}</td><td>${is_enabled ? "Yes" : "No"}</td>`;
+//		if (preinstalled)
+//			html += '<td></td><td></td>';
+//		else
+		html += `<td class="btn"><button onclick="chrome.webview.api.enable_extension('${id}', ${is_enabled == 0});">${is_enabled ? 'Disable' : 'Enable'}</button></td><td class="btn"><button onclick="chrome.webview.api.remove_extension('${id}');">Uninstall</button></td>`;
+		html += '</tr>';
+	}
+	document.querySelector('tbody').innerHTML = html;
+	document.querySelector('#main').style.display = 'block';
+}
+
+</script>
+</body>
+</html>

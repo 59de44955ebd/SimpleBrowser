@@ -1,0 +1,146 @@
+:root {
+  --bg-selected: #c8ebff;
+  --bg-hover: #E5F3FF;
+  --drag-insert: #0078d4;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-selected: #505050;
+		--bg-hover: #323232;
+		--drag-insert: #60cdff;
+		color-scheme: dark;
+	}
+}
+* {
+	box-sizing: border-box;
+}
+/*
+body {
+	margin: 20px;
+	font-family: arial, sans-serif;
+    font-size: 13px;
+}
+*/
+.tree {
+    height: 320px;
+    overflow: auto;
+    border: 1px solid gray;
+    resize: vertical;
+}
+.tree details {
+	position: relative;
+}
+.tree summary,
+.tree div {
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+	height: 22px;
+	white-space: nowrap;
+}
+.tree summary {
+	list-style-position: outside;
+	padding-bottom: 2px;
+}
+.tree div {
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: 3px 3px;
+	text-indent: 14px;
+	padding-top: 4px;
+}
+.tree .insert-above::before,
+.tree .insert-below::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0px;
+	height: 2px;
+	width: 100%;
+	background-color: var(--drag-insert);
+	z-index: 9999;
+}
+.tree .insert-above::before {
+	top: -1px;
+}
+.tree .insert-below::after {
+	top: 21px;
+}
+.tree summary.insert-above::before,
+.tree summary.insert-below::after {
+	left: -28px;
+}
+.tree summary.insert {
+	background-color: var(--bg-selected) !important;
+}
+.tree details.insert-above-details::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: -2px;
+	height: 2px;
+	width: 100%;
+	background-color: var(--drag-insert);
+	z-index: 9999;
+}
+.tree details.insert-below-details::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0px;
+	bottom: -2px;
+	height: 2px;
+	width: 100%;
+	background-color: var(--drag-insert);
+	z-index: 9999;
+}
+.tree details > div {
+	padding-left: 14px;
+}
+.tree .selected {
+	background-color: var(--bg-selected);
+}
+.tree summary:not(.selected):hover,
+.tree div:not(.selected):hover {
+	background-color: var(--bg-hover);
+}
+.tree details {
+	padding-left: 28px;
+}
+.tree details > summary:first-of-type {
+    list-style-image: url('folder-closed.png');
+}
+.tree details[open] > summary:first-of-type {
+	list-style-image: url('folder-open.png');
+}
+.tree summary::marker{
+	height: 16px;
+	font-size: 0;
+}
+input {
+	display: block;
+	width: 100%;
+	margin-top: 3px;
+	margin-bottom: 10px;
+}
+@media (prefers-color-scheme: dark) {
+	.tree details > summary:first-of-type {
+	    list-style-image: url('folder-closed-dark.png');
+	}
+	.tree details[open] > summary:first-of-type {
+		list-style-image: url('folder-open-dark.png');
+	}
+/*
+	button {
+	    background-color: #404040;
+	    border: none;
+	    padding: 3px 9px;
+	    border-radius: 3px;
+	}
+	button:disabled {
+	    background-color: #282828;
+	}
+*/
+}

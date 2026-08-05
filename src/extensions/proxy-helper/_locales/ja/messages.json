@@ -1,0 +1,245 @@
+{
+    "appName": {
+        "message" : "プロキシーヘルパー"
+    },
+    "appDesc": {
+        "message" : "Google Chromeのプロキシーサーバーを設定します"
+    },
+    "title" : {
+        "message" : "プロキシーヘルパー"
+    },
+    "configure": {
+        "message" : "設定"
+    },
+    "info": {
+        "message" : "情報"
+    },
+    "advanced_settings" : {
+        "message" : "詳細設定"
+    },
+    "pac_script" : {
+        "message" : "PACスクリプト:"
+    },
+    "http_proxy" : {
+        "message" : "HTTPプロキシー:"
+    },
+    "https_proxy" : {
+        "message" : "HTTPSプロキシー:"
+    },
+    "quic_proxy" : {
+        "message" : "QUICプロキシー:"
+    },
+    "socks_proxy" : {
+        "message" : "SOCKSプロキシー:"
+    },
+    "system_proxy" : {
+        "message" : "システムプロキシー"
+    },
+    "direct_proxy" : {
+        "message" : "プロキシーなし"
+    },
+    "config_proxy" : {
+        "message" : "プロキシー設定"
+    },
+    "more_modes": {
+        "message": "その他"
+    },
+    "port" : {
+        "message" : "ポート:"
+    },
+    "proxy_rules" : {
+        "message" : "プロキシールール: "
+    },
+    "use_predefine_list" : {
+        "message" : "既定のプロキシーを経由しない接続先リストを利用する"
+    },
+    "config_bypasslist" : {
+        "message" : "プロキシーを経由しない接続先リスト"
+    },
+    "domain_in_bypasslist" : {
+        "message" : "プロキシーを経由しないホスト名のリスト"
+    },
+    "china_list" : {
+        "message" : "中国サイトリスト"
+    },
+    "user" : {
+        "message" : "ユーザー:"
+    },
+    "pass" : {
+        "message" : "パスワード:"
+    },
+    "authentication" : {
+        "message" : "認証情報"
+    },
+    "authConfig" : {
+        "message" : "認証"
+    },
+    "pac_configuration" : {
+        "message" : "PAC設定"
+    },
+    "pac_data" : {
+        "message" : "PACファイル"
+    },
+    "pac_data_set" : {
+        "message" : "PACスクリプト"
+    },
+    "pac_url_set" : {
+        "message" : "PAC URL"
+    },
+    "socks_proxy_set" : {
+        "message" : "SOCKSプロキシー"
+    },
+    "http_proxy_set" : {
+        "message" : "HTTPプロキシー"
+    },
+    "https_proxy_set" : {
+        "message" : "HTTPSプロキシー"
+    },
+    "quic_proxy_set" : {
+        "message" : "QUICプロキシー"
+    },
+    "auto_detect_set" : {
+        "message" : "自動検出"
+    },
+    "General": {
+        "message" : "全般"
+    },
+    "Rules" : {
+        "message" : "ルール"
+    },
+    "Help" : {
+        "message" : "ヘルプ"
+    },
+    "About" : {
+        "message" : "プロキシーヘルパーについて"
+    },
+    "Options" : {
+        "message" : "オプション"
+    },
+    "proxy_servers" : {
+        "message" : "プロキシーサーバー"
+    },
+    "rules_mode": {
+        "message": "ルールモード:"
+    },
+    "Whitelist": {
+        "message": "ホワイトリスト"
+    },
+    "Blacklist": {
+        "message": "ブラックリスト"
+    },
+    "config_proxylist": {
+        "message": "プロキシリスト"
+    },
+    "domain_in_proxy": {
+        "message": "リストに含まれるドメインのみプロキシを経由します。"
+    },
+    "chrome_web_store": {
+        "message": "Chrome ウェブストア"
+    },
+    "open_source_licenses": {
+        "message": "オープンソースライセンス"
+    },
+    "proxy_helper_options": {
+        "message": "プロキシーヘルパー オプション"
+    },
+    "profile_default_name": {
+        "message": "Default"
+    },
+    "profiles_label": {
+        "message": "Profile:"
+    },
+    "new_profile": {
+        "message": "新規"
+    },
+    "rename_profile": {
+        "message": "名前変更"
+    },
+    "duplicate_profile": {
+        "message": "複製"
+    },
+    "delete_profile": {
+        "message": "削除"
+    },
+    "set_active": {
+        "message": "有効化"
+    },
+    "delete_profile_confirm": {
+        "message": "このプロファイルを削除しますか？この操作は元に戻せません。"
+    },
+    "cannot_delete_active_profile": {
+        "message": "アクティブなプロファイルは削除できません。先にポップアップで別のプロファイルに切り替えてください。"
+    },
+    "profile_name_prompt": {
+        "message": "プロファイル名:"
+    },
+    "profile_active_indicator": {
+        "message": "（アクティブ）"
+    },
+    "cycle_profile_command": {
+        "message": "次のプロキシプロファイルに切り替え"
+    },
+    "active_mode": {
+        "message": "アクティブモード"
+    },
+    "usage": {
+        "message": "使い方"
+    },
+    "changelog": {
+        "message": "更新履歴"
+    },
+    "usage_overview_title": {
+        "message": "概要"
+    },
+    "usage_overview_body": {
+        "message": "Proxy Helper は、システムのプロキシ設定とは独立して Chrome のプロキシを切り替えます。各プロファイルが完全なプロキシ設定を保持します。ポップアップでプロファイルとプロキシの種類を選ぶと適用されます。"
+    },
+    "usage_profiles_title": {
+        "message": "プロファイル"
+    },
+    "usage_profiles_body": {
+        "message": "環境ごとに 1 つのプロファイルを作成します (仕事、自宅、出張など)。このページ上部のバーから操作します: + New で新規作成、Rename / Duplicate / Delete で管理。有効なプロファイルの切り替えはポップアップから行います。"
+    },
+    "usage_modes_title": {
+        "message": "プロキシの種類"
+    },
+    "usage_modes_body": {
+        "message": "各プロファイルは現在使用しているプロキシの種類を記憶します。ポップアップには Direct と、他のタブで設定した HTTP / HTTPS / SOCKS / PAC の各項目が表示されます。System と Auto Detect (WPAD) は「その他」の行にまとめられています。"
+    },
+    "usage_servers_title": {
+        "message": "サーバー設定"
+    },
+    "usage_servers_body": {
+        "message": "General タブで HTTP、HTTPS、または SOCKS のプロキシホストとポートを入力します。SOCKS の場合はプロトコルバージョン (SOCKS4 または SOCKS5) を選択してください。Proxy Mode は Chrome が複数のプロキシにリクエストをどう振り分けるかを制御します (singleProxy はすべての通信に同じプロキシを使用)。"
+    },
+    "usage_pac_title": {
+        "message": "PAC (プロキシ自動構成)"
+    },
+    "usage_pac_body": {
+        "message": "PAC スクリプトは URL ごとに使用するプロキシを決定します。PAC Script にスクリプト本文を直接貼り付けるか、PAC URL に外部スクリプトのアドレスを指定します。"
+    },
+    "usage_rules_title": {
+        "message": "ルール：ホワイトリストとブラックリスト"
+    },
+    "usage_rules_body": {
+        "message": "ルールは通常の HTTP / HTTPS / SOCKS プロキシモードと組み合わせて動作し、PAC URL / PAC Script モードでは無視されます（PAC モードは独自のルーティングロジックを持つため）。ホワイトリスト（既定）：バイパスリストに一致するもの以外、すべての通信がプロキシを経由します。ブラックリスト：プロキシリストに一致する通信のみプロキシを経由し、その他は直接接続します（自動生成された PAC スクリプトで実現）。どちらのリストもカンマ区切りで、裸のホスト名（example.com はサブドメインも含む）、ワイルドカード（*.foo.com）、CIDR（192.168.0.0/16）、<local> を受け付けます。China List はホワイトリストモードでのみ有効です。"
+    },
+    "usage_auth_title": {
+        "message": "認証"
+    },
+    "usage_auth_body": {
+        "message": "基本認証を必要とするプロキシのユーザー名とパスワードです。注意: Chrome API は HTTP/HTTPS プロキシの認証のみをサポートし、SOCKS はサポートしません。"
+    },
+    "usage_shortcuts_title": {
+        "message": "キーボードショートカット"
+    },
+    "usage_shortcuts_body": {
+        "message": "Alt+P で次のプロファイルに切り替えます。Alt+O でこのオプションページを開きます。ショートカットは chrome://extensions/shortcuts でカスタマイズできます。"
+    },
+    "usage_switching_title": {
+        "message": "プロファイルの切り替え"
+    },
+    "usage_switching_body": {
+        "message": "ツールバーのアイコンをクリックしてポップアップを開きます。プロファイルをクリックして展開し、プロキシの種類をクリックすると、そのプロファイルが有効になり、プロキシがすぐに Chrome に適用されます。"
+    }
+}

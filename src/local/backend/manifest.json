@@ -1,0 +1,38 @@
+{
+  "name": "Backend",
+  "description": "Backend",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "permissions": [
+  	"action",
+    "activeTab",
+    "bookmarks",
+    "declarativeContent",
+    "downloads",
+    "favicon",
+    "history",
+    "management",
+    "notifications",
+    "offscreen",
+    "pageCapture",
+    "scripting",
+    "userScripts",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["_favicon/*"],
+      "matches": ["<all_urls>"],
+      "extension_ids": ["*"]
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["*://*/*"]
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  }
+}

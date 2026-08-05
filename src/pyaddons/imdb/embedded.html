@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background:black;">
+<iframe style="position:absolute;width:100%;height:100%;border:none"></iframe>
+<script>
+const params = new URLSearchParams(document.location.search);
+document.title = params.get("t");
+document.querySelector('iframe').src = 'https://www.2embed.cc/embed/' + params.get("i");
+</script>
+</body>
+</html>

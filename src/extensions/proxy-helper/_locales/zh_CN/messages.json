@@ -1,0 +1,290 @@
+{
+    "appName": {
+        "message" : "代理助手"
+    },
+    "appDesc": {
+        "message" : "为Google Chrome 浏览器设置代理"
+    },
+    "title" : {
+        "message" : "代理助手"
+    },
+    "proxy_helper_options" : {
+        "message" : "代理助手选项"
+    },
+    "configure": {
+        "message" : "配置"
+    },
+    "info": {
+        "message" : "信息"
+    },
+    "proxy_information" : {
+        "message" : "浏览器代理设置"
+    },
+    "config_auto": {
+        "message" : "自动设置代理"
+    },
+    "config_manual": {
+        "message" : "手动设置代理"
+    },
+    "show_adv" : {
+        "message" : "显示高级设置"
+    },
+    "advanced_settings" : {
+        "message" : "高级设置"
+    },
+    "download" : {
+        "message" : "下载"
+    },
+    "online_pac_script" : {
+        "message" : "使用在线PAC脚本"
+    },
+    "save" : {
+        "message" : "保存"
+    },
+    "edit" : {
+        "message" : "编辑"
+    },
+    "cancel" : {
+        "message" : "取消"
+    },
+    "proxy": {
+        "message" : "代理"
+    },
+    "pac_script" : {
+        "message" : "PAC 脚本"
+    },
+    "http_proxy" : {
+        "message" : "HTTP 代理:"
+    },
+    "https_proxy" : {
+        "message" : "HTTPS代理:"
+    },
+    "quic_proxy" : {
+        "message" : "QUIC代理:"
+    },
+    "socks_proxy" : {
+        "message" : "SOCKS代理:"
+    },
+    "system_proxy" : {
+        "message" : "系统代理"
+    },
+    "direct_proxy" : {
+        "message" : "直接连接"
+    },
+    "port" : {
+        "message" : "端口:"
+    },
+    "pac_path" : {
+        "message" : "PAC文件路径:"
+    },
+    "edit_pac_data" : {
+        "message" : "编辑PAC脚本"
+    },
+    "bypass_list" : {
+        "message" : "BYPASS列表"
+    },
+    "proxy_rules" : {
+        "message" : "PROXY模式: "
+    },
+    "return" : {
+        "message" : "返回"
+    },
+    "use_predefine_list" : {
+        "message" : "使用内置白名单"
+    },
+    "config_bypasslist" : {
+        "message" : "设置代理白名单"
+    },
+    "domain_in_bypasslist" : {
+        "message" : "在白名单里的域名将不使用代理"
+    },
+    "china_list" : {
+        "message" : "中国网站列表"
+    },
+    "user" : {
+        "message" : "用户:"
+    },
+    "pass" : {
+        "message" : "密码:"
+    },
+    "authentication" : {
+        "message" : "认证设置"
+    },
+    "authConfig" : {
+        "message" : "认证"
+    },
+    "pac_configuration" : {
+        "message" : "PAC 配置"
+    },
+    "pac_data" : {
+        "message" : "PAC 脚本"
+    },
+    "password_authentication": {
+        "message" : "使用密码认证"
+    },
+    "pac_data_set" : {
+        "message" : "PAC Script"
+    },
+    "pac_url_set" : {
+        "message" : "PAC Url"
+    },
+    "socks_proxy_set" : {
+        "message" : "SOCKS代理"
+    },
+    "http_proxy_set" : {
+        "message" : "HTTP代理"
+    },
+    "https_proxy_set" : {
+        "message" : "HTTPS代理"
+    },
+    "quic_proxy_set" : {
+        "message" : "QUIC代理"
+    },
+    "auto_detect_set" : {
+        "message" : "自动检测"
+    },
+    "config_proxy" : {
+        "message" : "代理配置"
+    },
+    "more_modes": {
+        "message": "更多"
+    },
+    "General": {
+        "message" : "常规"
+    },
+    "Rules" : {
+        "message" : "规则"
+    },
+    "Help" : {
+        "message" : "帮助"
+    },
+    "About" : {
+        "message" : "关于"
+    },
+    "Options" : {
+        "message" : "选项"
+    },
+    "proxy_servers" : {
+        "message" : "代理服务器"
+    },
+    "config_proxylist": {
+        "message": "设置代理黑名单"
+    },
+    "domain_in_proxy": {
+        "message": "在黑名单里的域名将使用代理"
+    },
+    "rules_mode": {
+        "message": "规则模式:"
+    },
+    "Whitelist": {
+        "message": "白名单"
+    },
+    "Blacklist": {
+        "message": "黑名单"
+    },
+    "chrome_web_store": {
+        "message": "Chrome 网上应用店"
+    },
+    "open_source_licenses": {
+        "message": "开源许可证"
+    },
+    "profile_default_name": {
+        "message": "Default"
+    },
+    "profiles_label": {
+        "message": "配置:"
+    },
+    "new_profile": {
+        "message": "新建"
+    },
+    "rename_profile": {
+        "message": "重命名"
+    },
+    "duplicate_profile": {
+        "message": "复制"
+    },
+    "delete_profile": {
+        "message": "删除"
+    },
+    "set_active": {
+        "message": "设为活动"
+    },
+    "delete_profile_confirm": {
+        "message": "删除此配置？此操作不可撤销。"
+    },
+    "cannot_delete_active_profile": {
+        "message": "不能删除当前生效的配置，请先在 popup 中切换到其他配置。"
+    },
+    "profile_name_prompt": {
+        "message": "配置名称:"
+    },
+    "profile_active_indicator": {
+        "message": "（当前）"
+    },
+    "cycle_profile_command": {
+        "message": "切换到下一个代理配置"
+    },
+    "active_mode": {
+        "message": "激活"
+    },
+    "usage": {
+        "message": "使用"
+    },
+    "changelog": {
+        "message": "更新"
+    },
+    "usage_overview_title": {
+        "message": "概览"
+    },
+    "usage_overview_body": {
+        "message": "Proxy Helper 独立于系统代理设置 Chrome 的代理。每个配置(profile)保存一组完整的代理设置；在弹窗中选择一个配置和一种代理类型即可应用。"
+    },
+    "usage_profiles_title": {
+        "message": "配置(Profile)"
+    },
+    "usage_profiles_body": {
+        "message": "为每个使用场景创建一个配置(如工作、家庭、出行)。使用本页顶部的工具栏: + New 新建, Rename / Duplicate / Delete 管理已有配置。在弹窗中切换当前生效的配置。"
+    },
+    "usage_modes_title": {
+        "message": "代理类型"
+    },
+    "usage_modes_body": {
+        "message": "每个配置会记住自己当前使用的代理类型。弹窗中列出 Direct 以及你在其他标签页里填好的每一项 HTTP / HTTPS / SOCKS / PAC 设置；System 和 Auto Detect (WPAD) 收在「更多」一行里。"
+    },
+    "usage_servers_title": {
+        "message": "服务器设置"
+    },
+    "usage_servers_body": {
+        "message": "在 General 标签页填入 HTTP、HTTPS 或 SOCKS 代理的主机与端口。SOCKS 通过单选按钮选择协议版本(SOCKS4 或 SOCKS5)。Proxy Mode 决定 Chrome 如何在多个代理之间分发请求(singleProxy 表示所有流量走同一代理)。"
+    },
+    "usage_pac_title": {
+        "message": "PAC (代理自动配置)"
+    },
+    "usage_pac_body": {
+        "message": "PAC 脚本根据 URL 决定使用哪个代理。在 PAC Script 直接粘贴脚本内容，或在 PAC URL 填入托管脚本的地址。"
+    },
+    "usage_rules_title": {
+        "message": "规则：白名单与黑名单"
+    },
+    "usage_rules_body": {
+        "message": "规则与常规的 HTTP / HTTPS / SOCKS 代理模式配合使用，与 PAC URL / PAC Script 模式互斥（PAC 模式有自己的路由逻辑）。白名单（默认）：除了命中 Bypass 列表的请求，其他都走代理。黑名单：只有命中代理列表的请求走代理，其他直连——通过自动生成的 PAC 脚本实现。两个列表都以逗号分隔，支持裸域名（example.com 也覆盖子域名）、通配符（*.foo.com）、CIDR（192.168.0.0/16）和 <local>。China List 只对白名单生效。"
+    },
+    "usage_auth_title": {
+        "message": "认证"
+    },
+    "usage_auth_body": {
+        "message": "为需要基本认证的代理填写用户名和密码。注意: Chrome API 仅支持 HTTP/HTTPS 代理认证，不支持 SOCKS。"
+    },
+    "usage_shortcuts_title": {
+        "message": "快捷键"
+    },
+    "usage_shortcuts_body": {
+        "message": "Alt+P 切换到下一个配置。Alt+O 打开此选项页。可在 chrome://extensions/shortcuts 自定义快捷键。"
+    },
+    "usage_switching_title": {
+        "message": "切换配置"
+    },
+    "usage_switching_body": {
+        "message": "点击工具栏扩展图标打开弹窗。点击某个配置将其展开，再点击一种代理类型 — 该配置随即生效，代理立即应用到 Chrome。"
+    }
+}

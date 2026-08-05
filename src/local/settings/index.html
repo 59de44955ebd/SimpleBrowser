@@ -1,0 +1,435 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+<meta name="color-scheme" content="light dark">
+<title>Settings</title>
+<style>body {font-family: arial, helvetica, sans-serif;}</style>
+
+<link rel="icon" href="favicon-light.ico" media="(prefers-color-scheme: light)" sizes="16x16" />
+<link rel="icon" href="favicon-dark.ico" media="(prefers-color-scheme: dark)" sizes="16x16" />
+
+<link rel="stylesheet" href="/index.css">
+<style>
+ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+li {
+	padding: 8px 0;
+}
+label {
+	font-weight: bold;
+}
+[type="checkbox"] + label {
+	padding-left: 4px;
+}
+.break {
+	display: block;
+	margin-top: 4px;
+}
+.search {
+	margin-top: 4px;
+	display: flex;
+}
+.search ul {
+	list-style: none;
+	padding: 4px;
+	border: 1px solid gray;
+	width: 50%;
+	min-height: 200px;
+}
+.search li {
+	cursor: grab;
+	border-top: 1px dashed transparent;
+	border-bottom: 1px dashed transparent;
+	padding: 0;
+}
+.search li div {
+	background-repeat: no-repeat;
+	background-position-x: 3px;
+	background-position-y: 3px;
+	background-size: 16px;
+	padding: 5px 0px 2px 24px;
+}
+.search li:active {
+	cursor: grabbing;
+}
+.search .insert-above {
+	border-top: 1px dashed black;
+}
+.search .insert-below {
+	border-bottom: 1px dashed black;
+}
+.search label {
+	font-weight: normal;
+}
+.search ul input {
+	display: none;
+}
+.search input:checked ~ div{
+	background-color: #ddd;
+	border-radius: 3px;
+}
+@media (prefers-color-scheme: dark) {
+	.search input:checked ~ div{
+		background-color: #6d6d6d;
+	}
+	.search .insert-above {
+		border-top: 1px dashed white;
+	}
+	.search .insert-below {
+		border-bottom: 1px dashed white;
+	}
+}
+.search .edit {
+	width: 50%;
+	padding: 0px 0 0 15px;
+}
+.search .edit input[type="text"] {
+	display: block;
+	width: 100%;
+	margin-top: 4px;
+	margin-bottom: 8px;
+}
+/*
+.search .edit input[type="button"],
+.search .edit button {
+	height: 22px;
+	width: 100px;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-top: 4px;
+}
+*/
+.search label:has(input[disabled]) {
+    color: #6d6d6d;
+}
+</style>
+</head>
+<body>
+<div id="main" style="display:none;">
+<h1>Settings</h1>
+<ul class="main">
+    <li>
+      <label for="homepage">Homepage</label> (empty = none)
+      <input type="text" id="homepage" placeholder="Example: https://www.startpage.com/" class="break">
+    </li>
+
+    <li>
+      <label for="new_tab_url">New tab URL</label> (empty = none)
+      <input type="text" id="new_tab_url" placeholder="Example: https://www.startpage.com/" class="break">
+    </li>
+
+    <li>
+      <label for="addressbar_search_url">Address bar search engine</label> (empty = none)
+      <input type="text" id="addressbar_search_url" placeholder="Example: https://www.google.com/search?q={term}" class="break">
+    </li>
+
+	<li>
+        <label for="addressbar_search_engines">Search Engines</label>
+		<div class="search">
+			<ul></ul>
+			<div class="edit" style="position:relative;">
+				<label>Name<input type="text" class="name" disabled required></label>
+				<label>Template-URL<input type="text" class="url" disabled required></label>
+				<label>Shortcut (optional)<input type="text" class="shortcut" disabled></label>
+				<div style="text-align:right;">
+					<input type="button" class="search-remove" disabled value="Remove">
+					<button class="search-new">New</button>
+					<input type="button" class="search-update" disabled value="Save">
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li>
+      	<label for="language">Chrome display language</label> (requires restart)
+      	<select id="language" class="break"><option value="">System language</option></select>
+	</li>
+
+    <li>
+      <input type="checkbox" id="restore_last_session_enabled"><label for="restore_last_session_enabled">Restore last session (tabs)</label>
+    </li>
+
+    <li>
+      <input type="checkbox" id="suspend_background_tab_enabled"><label for="suspend_background_tab_enabled">Suspend background tabs</label>
+    </li>
+
+    <li>
+      <input type="checkbox" id="auto_discard_tabs_enabled"><label for="discard_tabs_enabled">Auto discard inactive tabs</label> after <input type="number" id="auto_discard_tabs_period" min="1" required> minutes
+    </li>
+
+    <li>
+      <input type="checkbox" id="gpc_enabled"><label for="gpc_enabled">Enable <a href="https://globalprivacycontrol.org/" target="_blank">Global Privacy Control (GPC)</a></label>
+    </li>
+
+    <li>
+      <input type="checkbox" id="general_autofill_enabled"><label for="general_autofill_enabled">Enable general autofill</label>
+    </li>
+
+    <li>
+      <input type="checkbox" id="password_autosave_enabled"><label for="password_autosave_enabled">Enable password autosave</label>
+    </li>
+
+    <li>
+      <input type="checkbox" id="spell_checking_disabled"><label for="spell_checking_disabled">Globally disable spell checking</label>
+    </li>
+
+    <li>
+      <input type="checkbox" id="pinch_zoom_enabled"><label for="pinch_zoom_enabled">Enable pinch zoom</label>
+    </li>
+
+    <li>
+    	<input type="checkbox" id="swipe_navigation_enabled"><label for="swipe_navigation_enabled">Enable swipe navigation</label>
+    </li>
+
+    <li>
+      <input type="checkbox" id="zoom_control_enabled"><label for="zoom_control_enabled">Enable zoom control</label>
+    </li>
+
+    <li>
+      	<input type="checkbox" id="user_agent_enabled"><label for="user_agent_enabled">Overwrite User Agent</label>
+        <textarea rows="2" id="user_agent" placeholder="Example: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36" class="break"></textarea>
+    </li>
+
+    <li>
+      	<input type="checkbox" id="proxy_server_enabled"><label for="proxy_server_enabled">Use Proxy Server</label> (requires restart)
+        <input type="text" id="proxy_server" placeholder="Example: socks5://localhost:5555" class="break"></textarea>
+    </li>
+</ul>
+
+</div>
+
+<script>
+let settings;
+
+const div_search = document.querySelector('.search');
+const ul = div_search.querySelector('ul');
+
+const inp_name = div_search.querySelector('input.name');
+const inp_url = div_search.querySelector('input.url');
+const inp_shortcut = div_search.querySelector('input.shortcut');
+
+const btn_remove = div_search.querySelector('.search-remove');
+const btn_update = div_search.querySelector('.search-update');
+const btn_new = div_search.querySelector('.search-new');
+
+let draggedElement;
+let selectedElement;
+
+function handle_dragstart(e) {
+	draggedElement = this;
+	e.dataTransfer.effectAllowed = 'move';
+}
+
+function handle_dragover(e) {
+	e.preventDefault(); // @note This is needed for drop to fire.
+	e.dataTransfer.dropEffect = 'move';
+	this.classList = [e.y - e.target.offsetTop - e.target.offsetHeight / 2 < 0 ? 'insert-above' : 'insert-below'];
+}
+
+function handle_dragleave() {
+	this.classList = [];
+}
+
+function handle_drop(e) {
+	if (e.y - e.target.offsetTop - e.target.offsetHeight / 2 < 0)
+		this.insertAdjacentElement('beforebegin', draggedElement);
+	else
+		this.insertAdjacentElement('afterend', draggedElement);
+	this.classList = [];
+
+	const search_engines = [];
+	let i = 0;
+	for (let li of ul.querySelectorAll('li'))
+	{
+		search_engines.push(settings['search_engines'][parseInt(li.dataset.index)]);
+		li.dataset.index = i;
+		i++;
+	}
+
+	settings['search_engines'] = search_engines;
+	chrome.webview.api.update_setting('search_engines', settings['search_engines']);
+}
+
+function append_search_engine(engine, idx)
+{
+	const li = document.createElement('li');
+	li.draggable = true;
+	li.dataset.index = idx;
+	li.innerHTML = `<label><input type="radio" name="search"><div>${engine.name}</div></label>`;
+	li.querySelector('div').style.backgroundImage = `url('/search-icons/${engine.domain}.png')`;
+	ul.appendChild(li);
+
+	li.addEventListener('dragstart', handle_dragstart);
+	li.addEventListener('dragover', handle_dragover);
+	li.addEventListener('dragleave', handle_dragleave);
+	li.addEventListener('drop', handle_drop);
+
+	const btn = li.querySelector('input');
+
+	li.addEventListener('mousedown', () => {
+		selectedElement = li;
+		btn.checked = true;
+		const engine = settings['search_engines'][parseInt(li.dataset.index)];
+		inp_name.value = engine.name;
+		inp_url.value = engine.url;
+		inp_shortcut.value = engine.shortcut;
+		for (let el of document.querySelectorAll('.search input'))
+			el.disabled = false;
+	});
+}
+
+function add_search_engine(engine)
+{
+	try {
+		settings['search_engines'].push(engine);
+		append_search_engine(engine, settings['search_engines'].length - 1);
+		if (settings['search_engines'].length > 1)
+			btn_remove.style.display = 'inline-block';
+	}
+	catch(e)
+	{
+		console.error(e);
+	}
+}
+
+function show_settings(_settings, languages){
+	settings = _settings;
+	try {
+		[...document.querySelectorAll('.main > li > input[type=text], textarea')].forEach(el => {
+			el.spellcheck = false;
+			el.value = settings[el.id];
+			el.onchange = () => {
+				if (el.id == 'proxy_server' && el.value == '' && document.getElementById('proxy_server_enabled').checked)
+				{
+					document.getElementById('proxy_server_enabled').checked = false;
+					chrome.webview.api.update_setting('proxy_server_enabled', false);
+				}
+				if (el.id == 'user_agent' && el.value == '' && document.getElementById('user_agent_enabled').checked)
+				{
+					document.getElementById('user_agent_enabled').checked = false;
+					chrome.webview.api.update_setting('user_agent_enabled', false);
+				}
+				chrome.webview.api.update_setting(el.id, el.value);
+			}
+		});
+		[...document.querySelectorAll('input[type=number]')].forEach(el => {
+			el.value = settings[el.id];
+			el.onchange = () => {
+				if (el.value == '')
+					el.value = el.min;
+				chrome.webview.api.update_setting(el.id, parseInt(el.value));
+			}
+		});
+		[...document.querySelectorAll('[type=checkbox]')].forEach(el => {
+			el.checked = settings[el.id];
+			el.onchange = () => {
+				if (el.id == 'proxy_server_enabled' && el.checked && document.getElementById('proxy_server').value == '')
+				{
+					el.checked = false;
+					return;
+				}
+				if (el.id == 'user_agent_enabled' && el.checked && document.getElementById('user_agent').value == '')
+				{
+					el.checked = false;
+					return;
+				}
+				chrome.webview.api.update_setting(el.id, el.checked);
+			}
+		});
+
+		const select_lang = document.querySelector('#language');
+		for (let l of languages)
+		{
+			const opt = document.createElement('option');
+			opt.text = l;
+			select_lang.add(opt);
+		}
+		select_lang.value = settings.language;
+		select_lang.onchange = () => chrome.webview.api.update_setting('language', select_lang.value);
+
+		for (let i = 0; i < settings['search_engines'].length; i++)
+		{
+			append_search_engine(settings['search_engines'][i], i);
+		}
+
+		btn_remove.addEventListener('click', () => {
+			settings['search_engines'].splice(parseInt(selectedElement.dataset.index), 1);
+			selectedElement.remove();
+			selectedElement = null;
+
+			inp_name.value = inp_url.value = inp_shortcut.value = '';
+			for (let el of div_search.querySelectorAll('input'))
+				el.disabled = true;
+
+			let i = 0;
+			for (let li of ul.querySelectorAll('li'))
+			{
+				li.dataset.index = i;
+				i++;
+			}
+
+			chrome.webview.api.update_setting('search_engines', settings['search_engines']);
+		});
+
+		btn_update.addEventListener('click', () => {
+			if (!inp_name.value || !inp_url.value)
+			{
+				alert('Name and URL-Template are required.');
+				return;
+			}
+			if (!selectedElement)
+			{
+				chrome.webview.api.update_setting('new_search_engine', {name: inp_name.value, url: inp_url.value, shortcut: inp_shortcut.value});
+			}
+			else
+			{
+				const engine = settings['search_engines'][parseInt(selectedElement.dataset.index)];
+				engine.name = inp_name.value;
+				engine.url = inp_url.value;
+				engine.shortcut = inp_shortcut.value;
+
+				selectedElement.querySelector('div').textContent = engine.name;
+
+				chrome.webview.api.update_setting('search_engines', settings['search_engines']);
+			}
+		});
+
+		btn_new.addEventListener('click', () => {
+			inp_name.value = 'New Engine';
+			inp_url.value = 'https://example.com/search?q={searchTerms}';
+			inp_shortcut.value = '';
+
+			if (selectedElement)
+			{
+				selectedElement.querySelector('input').checked = false;
+				selectedElement = null;
+			}
+
+			for (let el of div_search.querySelectorAll('input'))
+				el.disabled = false;
+			btn_remove.disabled = true;
+		});
+
+		// We force at least one search engine, so the last existing can't be deleted
+		if (settings['search_engines'].length <= 1)
+			btn_remove.style.display = 'none';
+
+		document.querySelector('#main').style.display = 'block';
+	}
+	catch(e)
+	{
+		console.error(e);
+	}
+}
+
+window.addEventListener('beforeunload', function(e){
+	// Make sure last edited input/textarea element fires onchange by removing focus
+	document.body.focus();
+	window.setTimeout(() => chrome.webview.api.close(), 100);
+});
+</script>
+</body>
+</html>

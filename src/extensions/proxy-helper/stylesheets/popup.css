@@ -1,0 +1,531 @@
+/* =============================================
+   Proxy Helper — Popup
+   Modern minimal refresh · indigo accent · light + dark
+   ============================================= */
+
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-hover: #f4f4f5;
+  --surface-active: #ececef;
+
+  --accent: #0f766e;
+  --accent-hover: #115e59;
+  --accent-soft: rgba(15, 118, 110, 0.08);
+  --accent-medium: rgba(15, 118, 110, 0.14);
+  --accent-ring: rgba(15, 118, 110, 0.20);
+
+  --success: #16a34a;
+  --success-ring: rgba(22, 163, 74, 0.24);
+
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-tertiary: #a1a1aa;
+
+  --border: rgba(0, 0, 0, 0.06);
+  --border-strong: rgba(0, 0, 0, 0.10);
+  --divider: rgba(0, 0, 0, 0.05);
+
+  --radius: 8px;
+  --radius-sm: 6px;
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --duration: 160ms;
+
+  --font:
+    ui-sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Noto Sans", "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans",
+    "Microsoft YaHei", "Yu Gothic UI", "Meiryo",
+    "Noto Sans SC", "Noto Sans JP",
+    sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface-hover: #1c1c1f;
+    --surface-active: #232327;
+
+    --accent: #14b8a6;
+    --accent-hover: #2dd4bf;
+    --accent-soft: rgba(20, 184, 166, 0.14);
+    --accent-medium: rgba(20, 184, 166, 0.22);
+    --accent-ring: rgba(20, 184, 166, 0.30);
+
+    --success: #4ade80;
+    --success-ring: rgba(74, 222, 128, 0.30);
+
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-tertiary: #71717a;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --divider: rgba(255, 255, 255, 0.06);
+  }
+}
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  width: 240px;
+  font-family: var(--font);
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--bg);
+  padding: 4px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================
+   Header
+   ============================================= */
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 12px 12px;
+  margin-bottom: 2px;
+  position: relative;
+}
+
+.popup-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: var(--divider);
+}
+
+.popup-header .logo {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.popup-header .logo svg {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+.popup-header h1 {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+  line-height: 1;
+}
+
+.popup-header .version {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  margin-left: auto;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* =============================================
+   Profile rows
+   ============================================= */
+ul {
+  list-style: none;
+  padding: 4px;
+}
+
+li {
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 12px;
+}
+
+.menu .icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  transition:
+    background var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+}
+
+.menu .icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--text-secondary);
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke var(--duration) var(--ease);
+}
+
+.profile-name {
+  font-size: 13px;
+  font-weight: 550;
+  color: var(--text-primary);
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+/* ---- Profile item (accordion) ---- */
+#profile-list .profile-item { margin-bottom: 1px; }
+#profile-list .profile-item:last-child { margin-bottom: 0; }
+
+.profile-head {
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--duration) var(--ease);
+}
+
+.profile-item:not(.expanded) .profile-head:hover {
+  background: var(--surface-hover);
+}
+
+.profile-item:not(.expanded) .profile-head:hover .icon {
+  border-color: var(--border-strong);
+}
+
+.profile-head:active {
+  background: var(--surface-active);
+  transition-duration: 60ms;
+}
+
+.profile-head .chevron {
+  margin-left: auto;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  transition:
+    transform var(--duration) var(--ease),
+    color var(--duration) var(--ease);
+}
+
+.profile-head .chevron svg {
+  width: 12px;
+  height: 12px;
+}
+
+.profile-item.expanded .profile-head .chevron {
+  transform: rotate(180deg);
+}
+
+/* ---- Active profile ---- */
+.profile-item.active .profile-head {
+  background: var(--accent-soft);
+}
+
+.profile-item.active:not(.expanded) .profile-head:hover {
+  background: var(--accent-medium);
+}
+
+.profile-item.active .profile-head .icon {
+  border-color: var(--accent-ring);
+}
+
+.profile-item.active .profile-head .icon svg {
+  stroke: var(--accent);
+}
+
+.profile-item.active .profile-name {
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.profile-item.active .profile-head .chevron {
+  color: var(--accent);
+}
+
+/* ---- Mode sub-list ---- */
+.modes {
+  padding: 2px 0 4px;
+  display: none;
+}
+
+.profile-item.expanded > .modes {
+  display: block;
+}
+
+.modes li {
+  border-radius: var(--radius-sm);
+  margin: 1px 0 1px 8px;
+  cursor: pointer;
+  transition: background var(--duration) var(--ease);
+}
+
+.modes li .menu {
+  padding: 7px 10px;
+  gap: 9px;
+}
+
+.modes li .menu .icon {
+  width: 22px;
+  height: 22px;
+  background: transparent;
+  border-color: transparent;
+}
+
+.modes li .menu .icon svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--text-tertiary);
+  stroke-width: 1.7;
+}
+
+.modes li .menu .text {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modes li:hover {
+  background: var(--surface-hover);
+}
+
+.modes li:hover .menu .icon {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.modes li:hover .menu .icon svg {
+  stroke: var(--text-secondary);
+}
+
+.modes li:hover .menu .text {
+  color: var(--text-primary);
+}
+
+.modes li:active {
+  background: var(--surface-active);
+  transition-duration: 60ms;
+}
+
+/* "More" row + the secondary modes it reveals */
+.modes-more .menu .text {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.modes-more .more-hint {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+.modes-more .menu .icon svg {
+  transition: transform var(--duration) var(--ease);
+}
+
+.modes.show-extra .modes-more .menu .icon svg {
+  transform: rotate(180deg);
+}
+
+.modes.show-extra .modes-more .more-hint {
+  display: none;
+}
+
+.modes-extra {
+  display: none;
+}
+
+.modes.show-extra .modes-extra {
+  display: block;
+}
+
+/* current mode of the active profile — live indicator */
+.profile-item.active .modes li.current {
+  background: var(--accent-soft);
+}
+
+.profile-item.active .modes li.current:hover {
+  background: var(--accent-medium);
+}
+
+.profile-item.active .modes li.current .menu .icon svg {
+  stroke: var(--accent);
+}
+
+.profile-item.active .modes li.current .menu .text {
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.profile-item.active .modes li.current::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 0 var(--success-ring);
+  animation: pulse 2.4s var(--ease) infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 var(--success-ring); }
+  70%  { box-shadow: 0 0 0 6px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* =============================================
+   Settings row
+   ============================================= */
+#config-proxy {
+  cursor: pointer;
+  transition: background var(--duration) var(--ease);
+}
+
+#config-proxy:hover { background: var(--surface-hover); }
+#config-proxy:active { background: var(--surface-active); transition-duration: 60ms; }
+
+#config-proxy .menu {
+  padding: 9px 12px;
+}
+
+#config-proxy .menu .icon {
+  background: transparent;
+  border-color: transparent;
+}
+
+#config-proxy:hover .menu .icon {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+#config-proxy .menu .icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--text-tertiary);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition:
+    stroke var(--duration) var(--ease),
+    transform 360ms var(--ease);
+}
+
+#config-proxy:hover .menu .icon svg {
+  stroke: var(--text-secondary);
+  transform: rotate(60deg);
+}
+
+#config-proxy .menu .text {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: -0.005em;
+  transition: color var(--duration) var(--ease);
+}
+
+#config-proxy:hover .menu .text {
+  color: var(--text-secondary);
+}
+
+/* =============================================
+   Divider
+   ============================================= */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--divider);
+  margin: 3px 14px;
+}
+
+/* =============================================
+   Scrollbar
+   ============================================= */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.08); }
+}
+
+/* =============================================
+   Entrance
+   ============================================= */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#profile-list > .profile-item {
+  animation: slideUp 220ms var(--ease) both;
+}
+
+/* Light stagger — three steps then synchronous */
+#profile-list > .profile-item:nth-child(1) { animation-delay: 20ms; }
+#profile-list > .profile-item:nth-child(2) { animation-delay: 50ms; }
+#profile-list > .profile-item:nth-child(3) { animation-delay: 80ms; }
+#profile-list > .profile-item:nth-child(n+4) { animation-delay: 100ms; }
+
+/* =============================================
+   CJK / Cyrillic refinements
+   ============================================= */
+:lang(zh), :lang(ja) {
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+:lang(zh) { font-feature-settings: "palt"; }
+
+li .profile-name:lang(zh),
+li .profile-name:lang(ja) {
+  line-height: 1.35;
+}
+
+.popup-header h1:lang(zh),
+.popup-header h1:lang(ja),
+.popup-header h1:lang(ru) {
+  letter-spacing: 0;
+}

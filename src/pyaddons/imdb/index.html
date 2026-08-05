@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMDB-Spider - Find Movies</title>
+<link rel="shortcut icon" href="icon.ico" type="image/ico">
+<style>
+* {
+	font-family: sans-serif, arial;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 15px;
+}
+#query {
+	width:100%;
+}
+#results {
+	margin-top: 10px;
+	border-spacing: 0;
+	width: 100%;
+}
+th {
+	text-align: left;
+	font-weight: bold;
+	font-size: 12px;
+}
+tr:not(:first-child):hover {
+	background: #eee;
+}
+td {
+	vertical-align: top;
+}
+td:not(:last-child) {
+	padding-right: 10px;
+}
+td:not(:first-child) {
+	width: 1%;
+	white-space: nowrap;
+}
+#poster {
+	display: none;
+	width: 190px;
+	margin-top: 20px;
+	border: 1px solid black;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<input type="text" id="query" placeholder="Enter Movie Title or IMBD-ID">
+<table id="results"></table>
+<img id="poster" alt="">
+<script>
+const input_query = document.querySelector('#query');
+const el_results = document.querySelector('#results');
+const img_poster = document.querySelector('#poster');
+
+function show_poster(image_url)
+{
+	if (!image_url)
+		return hide_poster();
+	image_url = image_url.substr(0, image_url.length - 4) + 'QL75_UY281_CR5,0,190,281_.jpg';
+	img_poster.src = image_url;
+	img_poster.style.display = 'block';
+}
+
+function hide_poster()
+{
+	img_poster.style.display = 'none';
+}
+
+function fixedEncodeURIComponent(str)
+{
+	return encodeURIComponent(str).replace(/[!'()*]/g, escape);
+}
+
+function show_imdb_result(data)
+{
+	if (!data.d || data.d == 0)
+	{
+		el_results.innerHTML = 'No results';
+		return;
+	}
+
+	let htm = '';
+	for (let row of data['d'])
+	{
+		const imdb_id = row.id;
+		if (imdb_id.startsWith('tt'))
+		{
+			const imageUrl = row.i ? row.i.imageUrl : '';
+			const movie_title = row.l;
+			const movie_title_year = movie_title + (row.y ? ' (' + row.y + ')' : '');
+			htm += `<tr onmouseenter="show_poster('${imageUrl}')" onmouseleave="hide_poster()">
+				<td><a target="_blank" href="https://www.imdb.com/title/${imdb_id}/" title="View on IMDB.com">${movie_title_year}</a></td>
+				<td>
+					<a target="_blank" onclick="chrome.webview.api.query_seapi('${imdb_id}'); return false;" href="#" title="seapi">seapi</a>
+					<a target="_blank" href="https://vidsrc.me/embed/${imdb_id}" title="vidsrc">vidsrc</a>
+					<a target="_blank" href="embedded.html?i=${imdb_id}&t=${fixedEncodeURIComponent(movie_title_year)}" title="vidcloud">2embed</a>
+					<a target="_blank" href="https://archive.org/search?query=${fixedEncodeURIComponent(movie_title)}&and%5B%5D=mediatype%3A%22movies%22" title="archive.org">archive.org</a>
+				</td>
+			</tr>`;
+		}
+	}
+	el_results.innerHTML = htm;
+}
+
+window.addEventListener('hashchange', () => {
+	if (location.hash.startsWith('#q=') && location.hash.length >= 6)
+	{
+		const q = location.hash.substr(3);
+		input_query.value = decodeURIComponent(q);
+		chrome.webview.api.query_imdb(q);
+	}
+	else
+		el_results.innerHTML = '';
+}, false);
+
+input_query.onkeyup = (e) => {
+	if (input_query.value.startsWith('https://www.imdb.com/'))
+		input_query.value = input_query.value.match(/tt[0-9]+/)[0];
+	location.hash = '#q=' + input_query.value.trim().replaceAll('?', '%3F');
+}
+
+if (location.hash.startsWith('#q=') && location.hash.length > 3)
+{
+	const q = location.hash.substr(3);
+	input_query.value = decodeURIComponent(q);
+	if (location.hash.length >= 6)
+		chrome.webview.api.query_imdb(q);
+}
+else
+	input_query.value = '';
+
+</script>
+</body>
+</html>

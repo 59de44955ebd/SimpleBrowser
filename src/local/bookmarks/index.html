@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bookmark Manager</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon-light.ico" media="(prefers-color-scheme: light)" sizes="16x16">
+<link rel="icon" href="favicon-dark.ico" media="(prefers-color-scheme: dark)" sizes="16x16">
+<link rel="stylesheet" href="/index.css">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div id="main">
+	<h1>Bookmarks</h1>
+	<details>
+		<summary>Import from other Browser</summary>
+		<div style="padding: 15px">
+			<button class="import-chrome" disabled>Chrome</button>
+			<button class="import-chromium" disabled>Chromium</button>
+			<button class="import-edge" disabled>Edge</button>
+			<button class="import-firefox" disabled>Firefox</button>
+		</div>
+	</details>
+	<br>
+	<div class="tree" tabindex="0">
+		<details class="bar" open="true">
+			<summary readonly="true" tabindex="-1">Bookmarks bar</summary>
+		</details>
+		<details class="other" open="true">
+			<summary readonly="true" tabindex="-1">Other bookmarks</summary>
+		</details>
+	</div>
+	<br>
+	<button class="new-directory" disabled>New Directory</button>
+	<button class="new-bookmark" disabled>New Bookmark</button>
+	<button class="delete" disabled>Delete</button>
+	<br><br>
+	<label>Name<input type="text" id="name" disabled autocomplete="false"></label>
+	<label>URL<input type="url" id="url" disabled></label>
+	<button class="update" disabled>Update</button>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+#include "windows.h"
+#include "resources.h"
+
+ID_APP_MENU MENU
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "&New Tab\tCtrl+T", IDM_NEW_TAB
+    MENUITEM "New P&rivate Tab\tCtrl+T", IDM_NEW_PRIVATE_TAB
+    MENUITEM "&Open File...\tCtrl+O", IDM_OPEN
+    MENUITEM "&Mute Tab\tCtrl+M", IDM_MUTE_TAB
+    MENUITEM "&Close Tab\tCtrl+W", IDM_CLOSE_TAB
+    MENUITEM "Close &All Tabs", IDM_CLOSE_ALL_TABS
+    MENUITEM SEPARATOR
+    MENUITEM "&Save Page As...\tCtrl+S", IDM_SAVE_PAGE
+    MENUITEM "Save As PD&F...", IDM_PRINT_TO_PDF
+    MENUITEM "Save As &Image...", IDM_SAVE_AS_IMAGE
+    MENUITEM SEPARATOR
+    MENUITEM "&Print...\tCtrl+P", IDM_PRINT
+    MENUITEM SEPARATOR
+    MENUITEM "E&xit\tCtrl+Q", IDM_EXIT
+  END
+  POPUP "&View"
+  BEGIN
+    MENUITEM "&Fullscreen\tF11", IDM_TOGGLE_FULLSCREEN
+    POPUP "&Theme"
+    BEGIN
+      MENUITEM "&Auto (System)", IDM_THEME_AUTO
+      MENUITEM "&Light", IDM_THEME_LIGHT
+      MENUITEM "&Dark", IDM_THEME_DARK
+    END
+    MENUITEM SEPARATOR
+    MENUITEM "&Vertical Tabs\tAlt+V", IDM_TOGGLE_VERTICAL_TABS
+    MENUITEM "&Bookmarks Toolbar\tAlt+B", IDM_TOGGLE_BOOKMARKS
+    MENUITEM "&Status Bar\tAlt+S", IDM_TOGGLE_STATUSBAR
+  END
+  POPUP "&History"
+  BEGIN
+    MENUITEM "&Show All History\tCtrl+H", IDM_SHOW_HISTORY
+    POPUP "&Clear Browsing Data"
+    BEGIN
+      MENUITEM "History", IDM_CLEAR_HISTORY
+      MENUITEM SEPARATOR
+      MENUITEM "Cache", IDM_CLEAR_CACHE
+      MENUITEM "Cookies", IDM_CLEAR_COOKIES
+      MENUITEM SEPARATOR
+      MENUITEM "All Browsing Data", IDM_CLEAR_ALL
+    END
+    MENUITEM SEPARATOR
+  END
+  POPUP "&Bookmarks"
+  BEGIN
+    MENUITEM "&Manage Bookmarks\tCtrl+Shift+O", IDM_BOOKMARKS_MANAGE
+    MENUITEM SEPARATOR
+    MENUITEM "&Import Bookmarks", IDM_BOOKMARKS_IMPORT
+    MENUITEM "&Export Bookmarks", IDM_BOOKMARKS_EXPORT
+    MENUITEM SEPARATOR
+  END
+  POPUP "&Tools"
+  BEGIN
+    MENUITEM "&Downloads\tCtrl+J", IDM_DOWNLOADS
+    MENUITEM "&Extensions", IDM_BROWSER_EXTENSIONS
+    MENUITEM "&Developer Tools\tF12", IDM_DEV_TOOLS
+    MENUITEM "Task &Manager", IDM_TASK_MANAGER
+    MENUITEM SEPARATOR
+    MENUITEM "&Settings", IDM_SETTINGS
+  END
+  POPUP "&Help"
+  BEGIN
+    MENUITEM "&About...\tF1", IDM_ABOUT
+    MENUITEM SEPARATOR
+    MENUITEM "&System Info", IDM_SYSTEM_INFO
+    MENUITEM "&Open Source Credits", IDM_CREDITS
+  END
+END

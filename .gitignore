@@ -1,0 +1,12 @@
+/build/
+/dist/
+/nsis/uninstall_list.nsh
+/releases/
+/stuff/
+/test_files/
+_backup.rar
+/*.spec
+/src/profile/
+/src/_clear.cmd
+/src/settings.json
+/src/state.json
