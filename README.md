@@ -12,7 +12,7 @@ SimpleBrowser is a simple and small multi-tab desktop browser for Windows 11, ba
 * (Limited) extension support - extensions can be installed both from the [Edge](https://microsoftedge.microsoft.com/addons/microsoft-edge-extensions) and the [Chrome](https://chromewebstore.google.com/category/extensions) extension store, or from a local folder or .crx file. For demonstration purposes the browser comes with 5 extensions preinstalled, but of course you are free to uninstall them (menu `Tools` --> `Extensions`).
 * Python addons - the browser can be extended with small Python scripts.
 * Bookmark import from common browsers
-* Can use a local/private [WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2?form=MA13LH&cs=3874561694#download) version (download a `FixedVersionRuntime` .cab, unpack it e.g. with 7-Zip, rename the unpacked directory `runtime` and put it into the `data` directory next to `SimpleBrowser.exe`). 
+* Can use a local/private [WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2?form=MA13LH&cs=3874561694#download) version (download a `FixedVersionRuntime` .cab, unpack it e.g. with 7-Zip, rename the unpacked directory `runtime` and put it into the `data` directory next to `SimpleBrowser.exe`). Older Runtime versions - like 147.x, which doesn't crash the history tab, see below - can be downloaded from [here](https://github.com/libnyanpasu/webview2-runtime-archive/releases).
 
 ## Known issues
 
