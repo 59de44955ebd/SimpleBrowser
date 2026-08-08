@@ -3021,8 +3021,7 @@ class App(MainWin):
                             'Success' if error_code == 0 else 'Error'
                         )
 
-#                    webview.profile_add_browser_extension(os.path.dirname(filename), _on_extension_installed)
-                    webview.profile_add_browser_extension('C:\\extensions\\jsonviewx', _on_extension_installed)
+                    webview.profile_add_browser_extension(os.path.dirname(filename), _on_extension_installed)
 
                 elif basename.endswith('.crx'):
                     self.install_extension_crx(webview, filename, basename[:-4])

@@ -60,11 +60,9 @@ PROFILE_DIR = os.path.join(APP_DIR, 'profile')
 if not os.path.isdir(PROFILE_DIR):
     os.mkdir(PROFILE_DIR)
 
-#EXTENSIONS_DIR = os.path.join(APP_DIR, 'extensions')
-#if not os.path.isdir(EXTENSIONS_DIR):
-#    os.mkdir(EXTENSIONS_DIR)
-
-EXTENSIONS_DIR = 'C:\\extensions'
+EXTENSIONS_DIR = os.path.join(APP_DIR, 'extensions')
+if not os.path.isdir(EXTENSIONS_DIR):
+    os.mkdir(EXTENSIONS_DIR)
 
 PYADDON_DIR = os.path.join(APP_DIR, 'pyaddons')
 SEARCH_ICON_DIR = os.path.join(APP_DIR, 'local', 'search-icons')
