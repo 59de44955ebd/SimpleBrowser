@@ -240,7 +240,7 @@ class App(MainWin):
 
             # Menu: Tools
             IDM_DOWNLOADS:              lambda: self.local_tab('edge://downloads/'),
-            IDM_DEV_TOOLS:              self.toggle_dev_tools,
+            IDM_DEV_TOOLS:              self.open_dev_tools,
             IDM_BROWSER_EXTENSIONS:     lambda: self.local_tab('https://local/extensions/index.html'),
             IDM_TASK_MANAGER:           self.open_task_manager,
             IDM_SETTINGS:               lambda: self.local_tab('https://local/settings/index.html'),
@@ -772,7 +772,6 @@ class App(MainWin):
                     self.create_timer(_start_drag, 400, True, TIMER_ID_BOOKMARKS_MOVE)
 
                 elif msg == TBN_ENDDRAG:
-#                    print('TBN_ENDDRAG')
 
 #                    user32.SetCursor(None)
                     user32.KillTimer(self.toolbar_bookmarks.hwnd, TIMER_ID_BOOKMARKS_MOVE)
@@ -1423,7 +1422,6 @@ class App(MainWin):
         if row_icon:
             return load_png_data(row_icon[0], fix_alpha)
 #        else:
-#            print('NOPE')
 #            return self.h_bitmap_blank
 
     ########################################
@@ -1445,7 +1443,6 @@ class App(MainWin):
         #
         ########################################
         def _on_update_bookmarks(tree):
-            print('_on_update_bookmarks')
             self.load_bookmarks(tree[0])
             #self.reload_local('https://local/bookmarks/index.html')
 
@@ -1453,7 +1450,6 @@ class App(MainWin):
         #
         ########################################
         def _on_bookmark_created(id, info):
-#            print('_on_bookmark_created', id, info)
             self.emit(EVENT_BOOKMARK_CREATED, id, info)
 
         ########################################
@@ -1509,7 +1505,6 @@ class App(MainWin):
             #
             ########################################
             def _on_backend_installed(error_code, extension):
-#                print('>>>', error_code, extension)
                 self.backend_id = extension.get_Id()
 
                 webview.connect(EVENT.DOM_CONTENT_LOADED, _on_dom_content_loaded)
@@ -1681,6 +1676,13 @@ class App(MainWin):
 
             elif url.startswith('https://local/bookmarks/'):
                 self.init_bookmark_manager(webview)
+
+            elif url.startswith('file:') and url.endswith('.md'):
+                js = '''{const scr=document.createElement("script");
+scr.src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js";
+scr.onload=() => document.body.innerHTML=marked.parse(document.body.firstElementChild.innerText);
+document.body.appendChild(scr);}'''
+                webview.execute_js(js)
 
         webview.connect(EVENT.DOM_CONTENT_LOADED, _on_dom_content_loaded)
 
@@ -2928,7 +2930,6 @@ class App(MainWin):
     #
     ########################################
     def init_show_extensions(self, webview):
-#        print('init_show_extensions')
 
         ########################################
         #
@@ -3154,15 +3155,8 @@ document.querySelector("[id='webview-install']").addEventListener('click', (e) =
     ########################################
     #
     ########################################
-    def toggle_dev_tools(self):
-        if self.active_webview.hwnd_devtools:
-            if not user32.IsWindow(self.active_webview.hwnd_devtools):
-                self.active_webview.hwnd_devtools = None
-        if self.active_webview.hwnd_devtools:
-            user32.SendMessageW(self.active_webview.hwnd_devtools, WM_CLOSE, 0, 0)
-            self.active_webview.hwnd_devtools = None
-        else:
-            self.active_webview.open_dev_tools()
+    def open_dev_tools(self):
+        self.active_webview.open_dev_tools()
 
     ########################################
     #
@@ -3285,4 +3279,6 @@ document.querySelector("[id='webview-install']").addEventListener('click', (e) =
 
 if __name__ == '__main__':
     sys.excepthook = traceback.print_exception
+#    DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 = -4
+#    user32.SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2)
     sys.exit(App().run())
